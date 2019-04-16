@@ -7,13 +7,11 @@ var appData = {
     expenses: {},
     optionalExpenses: null,
     income: null,
-    savings: false, 
+    savings: false,
 };
 
 var question1 = prompt("Введите обязательную статью расходов в этом месяце", "");
 var question2 = prompt("Во сколько обойдется?", "");
 appData.expenses.question1 = question2;
 
-console.log(appData);
-
-// alert("Бюджет на 1 день сотовляет:" + addData["budget"] / 30);
+alert("Бюджет на 1 день сотовляет:" + addData["budget"] / 30);
