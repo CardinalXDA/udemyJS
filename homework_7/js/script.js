@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     // Timer 
 
-    let deadline = '2019-05-24';
+    let deadline = '2019-06-24';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()),
@@ -84,4 +84,39 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     setClock('timer', deadline);
+
+    // Modal
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 });
+
+//2 задание
+/*<input id="age" value="30">
+let age = document.getElementById('age');
+function showUser(surname, name) {
+    alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+showUser();*/
+
+
+let age = document.getElementById('age');
+ 
+function showUser(surname, name) {
+    alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+ 
+showUser.apply(age, ["Хомко","Дима"]);
